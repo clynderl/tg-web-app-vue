@@ -63,8 +63,8 @@ const onFromSelect = (val) => {
 <template>
   <div>
     <TheHeader />
-    work
-    <Button type="button" @click="onToggleButton">Toggle</Button>
+<!--    work-->
+<!--    <Button type="button" @click="onToggleButton">Toggle</Button>-->
     <transition name="fade" mode="out-in">
       <DirectionsList v-if="step === 0" :active-item="from" @change="onFromSelect($event)" />
       <DirectionsList v-if="step === 1" :active-item="to" @change="to = $event" />
