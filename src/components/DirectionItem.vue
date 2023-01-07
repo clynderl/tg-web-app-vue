@@ -1,12 +1,17 @@
 <template>
-  <div class="direction">
-    <img src="https://swapcoin.cc/psicons/color/bitcoin.svg" alt="" class="img">
+  <div class="direction" :class="active ? 'active' : ''">
+    <img src="/bitcoin.svg" alt="" class="img" >
     <div class="title">Bitcoin</div>
   </div>
 </template>
 
 <script setup>
-
+defineProps({
+  active: {
+    type: Boolean,
+    default: false,
+  },
+});
 </script>
 
 <style scoped>
@@ -14,12 +19,13 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  border: 1px solid transparent;
   padding: 15px;
   width: 170px;
 }
 
 .direction.active {
-  border: 1px solid blue;
+  border-color: var(--tg-theme-button-color);
 }
 
 .img {
@@ -30,6 +36,7 @@
 
 .title {
   font-size: .9em;
+  color: var(--tg-theme-text-color);
 }
 
 .add-btn {
