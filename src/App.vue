@@ -36,10 +36,18 @@ tg.MainButton.onClick(() => {
   } else if (step.value === 1) {
     step.value = 2;
     tg.MainButton.hide();
-    tg.showPopup({
-      title: 'Привет',
-      description: 'Это тестовое приложение',
-    })
+    tg.showConfirm('Подтвердить', 'Отмена', 'Вы уверены, что хотите обменять?', () => {
+      tg.showAlert('Обмен успешно завершен', 'Ок', () => {
+        step.value = 0;
+        from.value = null;
+        to.value = null;
+        tg.MainButton.show();
+        tg.BackButton.hide();
+      });
+    }, () => {
+      step.value = 1;
+      tg.MainButton.show();
+    });
   } else if (step.value === 2) {
     step.value = 3;
   }
@@ -70,10 +78,10 @@ const onFromSelect = (val) => {
     <!--    work-->
     <!--    <Button type="button" @click="onToggleButton">Toggle</Button>-->
     <transition name="fade" mode="out-in">
-      <DirectionsList v-if="step === 0" :active-item="from" @change="onFromSelect($event)" :step="step"/>
+      <DirectionsList v-if="step === 0" :active-item="from" @change="onFromSelect($event)" :step="step" />
     </transition>
     <transition name="fade" mode="out-in">
-      <DirectionsList v-if="step === 1" :active-item="to" @change="to = $event" :step="step"/>
+      <DirectionsList v-if="step === 1" :active-item="to" @change="to = $event" :step="step" />
     </transition>
   </div>
 </template>
