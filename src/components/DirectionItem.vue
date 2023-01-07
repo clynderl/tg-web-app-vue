@@ -1,7 +1,7 @@
 <template>
   <div class="direction" :class="active ? 'active' : ''">
-    <img src="/bitcoin.svg" alt="" class="img" >
-    <div class="title">Bitcoin</div>
+    <img :src="step === 1 : '/bitcoin.svg' : '/ethereum.svg'" alt="" class="img">
+    <div class="title">{{ step === 1 ? 'Bitcoin' : 'Ethereum' }}</div>
   </div>
 </template>
 
@@ -10,6 +10,10 @@ defineProps({
   active: {
     type: Boolean,
     default: false,
+  },
+  step: {
+    type: Number,
+    required: true,
   },
 });
 </script>
@@ -20,7 +24,7 @@ defineProps({
   flex-direction: column;
   align-items: center;
   border: 1px solid transparent;
-  box-shadow: 3px 4px 5px 0px rgba(0,0,0,0.45);
+  box-shadow: 3px 4px 5px 0px rgba(0, 0, 0, 0.45);
   background: var(--tg-theme-bg-color);
   padding: 15px;
   width: 170px;

@@ -4,6 +4,7 @@
         v-for="i in 15"
         :key="i"
         class="item"
+        :step="step"
         :active="activeItem === i"
         @click="emit('change', i)"
     />
@@ -17,6 +18,10 @@ defineProps({
   activeItem: {
     type: Number,
     default: 0,
+  },
+  step: {
+    type: Number,
+    required: true,
   },
 });
 
