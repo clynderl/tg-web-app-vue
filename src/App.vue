@@ -8,6 +8,7 @@ const {tg, onToggleButton} = useTelegram()
 
 onMounted(() => {
   tg.ready();
+  tg.BackButton.show();
 });
 </script>
 
@@ -15,6 +16,7 @@ onMounted(() => {
   <div>
     <TheHeader />
     work
+    {{tg.BackButton}}
     <Button type="button" @click="onToggleButton">Toggle</Button>
   </div>
 </template>
