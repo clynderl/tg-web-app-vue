@@ -18,7 +18,7 @@ const from = ref(null);
 
 watch(from, (val) => {
   if (val) {
-    tg.BackButton.show();
+    onToggleButton();
   }
 });
 </script>
