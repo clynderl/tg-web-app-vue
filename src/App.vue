@@ -55,7 +55,7 @@ tg.BackButton.onClick(() => {
 
 const onFromSelect = (val) => {
   from.value = val;
-  tg.selectionChanged();
+  tg.HapticFeedback.selectionChanged();
 };
 
 </script>
