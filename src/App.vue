@@ -7,6 +7,10 @@ import DirectionsList from './components/DirectionsList.vue';
 
 const {tg, onToggleButton} = useTelegram();
 
+const step = ref(0);
+const from = ref(null);
+const to = ref(null);
+
 onMounted(() => {
   tg.ready();
   setTimeout(() => {
@@ -14,13 +18,23 @@ onMounted(() => {
   }, 2000);
 });
 
-const from = ref(null);
 
 watch(from, (val) => {
   if (val) {
     onToggleButton();
   }
 });
+
+tg.MainButton.onClick(() => {
+  if (step.value === 0) {
+    step.value = 1;
+  } else if (step.value === 1) {
+    step.value = 2;
+  } else if (step.value === 2) {
+    step.value = 3;
+  }
+});
+
 </script>
 
 <template>
@@ -29,6 +43,6 @@ watch(from, (val) => {
     work
     <Button type="button" @click="onToggleButton">Toggle</Button>
 
-    <DirectionsList :active-item="from" @change="from = $event" />
+    <DirectionsList v-if="step === 0" :active-item="from" @change="from = $event" />
   </div>
 </template>
