@@ -5,16 +5,22 @@
         :key="i"
         class="item"
         :active="activeItem === i"
-        @click="activeItem = i"
+        @click="emit('change', i)"
     />
   </div>
 </template>
 
 <script setup>
 import DirectionItem from './DirectionItem.vue';
-import {ref} from 'vue';
 
-const activeItem = ref(null);
+defineProps({
+  activeItem: {
+    type: Number,
+    default: 0,
+  },
+});
+
+const emit = defineEmits(['change']);
 </script>
 
 <style scoped>

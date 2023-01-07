@@ -1,5 +1,5 @@
 <script setup>
-import {onMounted} from 'vue';
+import {onMounted, ref, watch} from 'vue';
 import Button from './components/Button.vue';
 import useTelegram from './use/useTelegram.js';
 import TheHeader from './components/TheHeader.vue';
@@ -13,6 +13,14 @@ onMounted(() => {
     tg.BackButton.show();
   }, 2000);
 });
+
+const from = ref(null);
+
+watch(from, (val) => {
+  if (val) {
+    tg.BackButton.show();
+  }
+});
 </script>
 
 <template>
@@ -21,7 +29,7 @@ onMounted(() => {
     work
     <Button type="button" @click="onToggleButton">Toggle</Button>
 
-    <DirectionsList />
+    <DirectionsList :active-item="from" @change="from = $event" />
   </div>
 </template>
 
