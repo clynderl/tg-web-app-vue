@@ -13,9 +13,6 @@ const to = ref(null);
 
 onMounted(() => {
   tg.ready();
-  setTimeout(() => {
-    tg.BackButton.show();
-  }, 2000);
 });
 
 
@@ -35,11 +32,24 @@ tg.MainButton.onClick(() => {
   if (step.value === 0) {
     step.value = 1;
     tg.MainButton.hide();
+    tg.BackButton.show();
   } else if (step.value === 1) {
     step.value = 2;
     tg.MainButton.hide();
   } else if (step.value === 2) {
     step.value = 3;
+  }
+});
+
+tg.BackButton.onClick(() => {
+  if (step.value === 1) {
+    step.value = 0;
+    tg.MainButton.show();
+    tg.BackButton.hide();
+  } else if (step.value === 2) {
+    step.value = 1;
+  } else if (step.value === 3) {
+    step.value = 2;
   }
 });
 
