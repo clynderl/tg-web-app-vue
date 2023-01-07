@@ -50,8 +50,21 @@ tg.MainButton.onClick(() => {
     <TheHeader />
     work
     <Button type="button" @click="onToggleButton">Toggle</Button>
-
-    <DirectionsList v-if="step === 0" :active-item="from" @change="from = $event" />
-    <DirectionsList v-if="step === 1" :active-item="to" @change="to = $event" />
+    <transition name="fade" mode="out-in">
+      <DirectionsList v-if="step === 0" :active-item="from" @change="from = $event" />
+      <DirectionsList v-if="step === 1" :active-item="to" @change="to = $event" />
+    </transition>
   </div>
 </template>
+
+<style scoped>
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+</style>
