@@ -6,7 +6,7 @@
 </template>
 
 <script setup>
-import Button from '../App.vue';
+import Button from './Button.vue';
 import {computed} from 'vue';
 import useTelegram from '../use/useTelegram.js';
 
