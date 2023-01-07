@@ -33,8 +33,10 @@ tg.MainButton.onClick(() => {
     step.value = 1;
     tg.MainButton.hide();
     tg.BackButton.show();
+    tg.impactOccurred('light');
   } else if (step.value === 1) {
     step.value = 2;
+    tg.impactOccurred('medium');
     tg.MainButton.hide();
   } else if (step.value === 2) {
     step.value = 3;
