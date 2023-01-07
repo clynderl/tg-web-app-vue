@@ -1,6 +1,6 @@
 <template>
   <div class="direction" :class="active ? 'active' : ''">
-    <img :src="step === 1 : '/bitcoin.svg' : '/ethereum.svg'" alt="" class="img">
+    <img :src="step === 1 ? '/bitcoin.svg' : '/ethereum.svg'" alt="" class="img">
     <div class="title">{{ step === 1 ? 'Bitcoin' : 'Ethereum' }}</div>
   </div>
 </template>
