@@ -3,6 +3,7 @@ import {onMounted} from 'vue';
 import Button from './components/Button.vue';
 import useTelegram from './use/useTelegram.js';
 import TheHeader from './components/TheHeader.vue';
+import DirectionItem from './components/DirectionItem.vue';
 
 const {tg, onToggleButton} = useTelegram();
 
@@ -18,7 +19,7 @@ onMounted(() => {
   <div>
     <TheHeader />
     work
-    {{ tg.BackButton }}
+    <DirectionItem />
     <Button type="button" @click="onToggleButton">Toggle</Button>
   </div>
 </template>
