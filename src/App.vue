@@ -36,8 +36,8 @@ tg.MainButton.onClick(() => {
   } else if (step.value === 1) {
     step.value = 2;
     tg.MainButton.hide();
-    tg.showConfirm('Подтвердить', 'Отмена', 'Вы уверены, что хотите обменять?', () => {
-      tg.showAlert('Обмен успешно завершен', 'Ок', () => {
+    tg.showConfirm('Вы уверены, что хотите обменять?', () => {
+      tg.showAlert('Обмен успешно завершен', () => {
         step.value = 0;
         from.value = null;
         to.value = null;
