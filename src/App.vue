@@ -1,20 +1,21 @@
 <script setup>
 import {onMounted} from 'vue';
+import Button from './components/Button.vue';
+import useTelegram from './use/useTelegram.js';
+import TheHeader from './components/TheHeader.vue';
 
-const tg = window.Telegram.WebApp;
+const {tg, onToggleButton} = useTelegram()
 
 onMounted(() => {
   tg.ready();
 });
-const onClose = () => {
-  tg.close();
-};
 </script>
 
 <template>
   <div>
+    <TheHeader />
     work
-    <button @click="onClose">Close</button>
+    <Button type="button" @click="onToggleButton">Toggle</Button>
   </div>
 </template>
 
