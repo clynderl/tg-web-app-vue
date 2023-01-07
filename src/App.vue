@@ -36,6 +36,10 @@ tg.MainButton.onClick(() => {
   } else if (step.value === 1) {
     step.value = 2;
     tg.MainButton.hide();
+    tg.showPopup({
+      title: 'Привет',
+      description: 'Это тестовое приложение',
+    })
   } else if (step.value === 2) {
     step.value = 3;
   }
