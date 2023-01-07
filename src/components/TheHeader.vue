@@ -2,6 +2,7 @@
   <div class="header">
     <Button @click="onClose">Закрыть</Button>
     <span class="username">{{username}}</span>
+    <img :src="photoUrl" alt="" class="img">
   </div>
 </template>
 
@@ -14,6 +15,10 @@ const {tg, onClose} = useTelegram();
 
 const username = computed(() => {
   return tg.initDataUnsafe?.user?.username;
+});
+
+const photoUrl = computed(() => {
+  return tg.initDataUnsafe?.user?.photo_url;
 });
 </script>
 
@@ -28,5 +33,12 @@ const username = computed(() => {
 
 .username {
   margin-left: auto;
+}
+
+.img {
+  width: 30px;
+  height: 30px;
+  margin-left: 10px;
+  border-radius: 50%;
 }
 </style>
