@@ -33,10 +33,8 @@ tg.MainButton.onClick(() => {
     step.value = 1;
     tg.MainButton.hide();
     tg.BackButton.show();
-    tg.impactOccurred('light');
   } else if (step.value === 1) {
     step.value = 2;
-    tg.impactOccurred('medium');
     tg.MainButton.hide();
   } else if (step.value === 2) {
     step.value = 3;
@@ -55,6 +53,11 @@ tg.BackButton.onClick(() => {
   }
 });
 
+const onFromSelect = (val) => {
+  from.value = val;
+  tg.selectionChanged();
+};
+
 </script>
 
 <template>
@@ -63,7 +66,7 @@ tg.BackButton.onClick(() => {
     work
     <Button type="button" @click="onToggleButton">Toggle</Button>
     <transition name="fade" mode="out-in">
-      <DirectionsList v-if="step === 0" :active-item="from" @change="from = $event" />
+      <DirectionsList v-if="step === 0" :active-item="from" @change="onFromSelect($event)" />
       <DirectionsList v-if="step === 1" :active-item="to" @change="to = $event" />
     </transition>
   </div>
