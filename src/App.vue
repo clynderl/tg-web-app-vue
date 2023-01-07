@@ -41,7 +41,7 @@ tg.MainButton.onClick(() => {
         step.value = 0;
         from.value = null;
         to.value = null;
-        tg.MainButton.show();
+        tg.MainButton.hide();
         tg.BackButton.hide();
       });
     }, () => {
