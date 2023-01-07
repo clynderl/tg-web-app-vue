@@ -22,6 +22,7 @@ defineProps({
   border: 1px solid transparent;
   padding: 15px;
   width: 170px;
+  cursor: pointer;
 }
 
 .direction.active {
@@ -35,8 +36,10 @@ defineProps({
 }
 
 .title {
+  margin-top: 10px;
   font-size: .9em;
   color: var(--tg-theme-text-color);
+  cursor: pointer;
 }
 
 .add-btn {
