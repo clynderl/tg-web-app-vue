@@ -4,11 +4,13 @@ import Button from './components/Button.vue';
 import useTelegram from './use/useTelegram.js';
 import TheHeader from './components/TheHeader.vue';
 
-const {tg, onToggleButton} = useTelegram()
+const {tg, onToggleButton} = useTelegram();
 
 onMounted(() => {
   tg.ready();
-  tg.BackButton.show();
+  setTimeout(() => {
+    tg.BackButton.show();
+  }, 2000);
 });
 </script>
 
@@ -16,7 +18,7 @@ onMounted(() => {
   <div>
     <TheHeader />
     work
-    {{tg.BackButton}}
+    {{ tg.BackButton }}
     <Button type="button" @click="onToggleButton">Toggle</Button>
   </div>
 </template>
