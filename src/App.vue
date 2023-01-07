@@ -25,11 +25,19 @@ watch(from, (val) => {
   }
 });
 
+watch(to, (val) => {
+  if (val) {
+    onToggleButton();
+  }
+});
+
 tg.MainButton.onClick(() => {
   if (step.value === 0) {
     step.value = 1;
+    tg.MainButton.hide();
   } else if (step.value === 1) {
     step.value = 2;
+    tg.MainButton.hide();
   } else if (step.value === 2) {
     step.value = 3;
   }
@@ -44,5 +52,6 @@ tg.MainButton.onClick(() => {
     <Button type="button" @click="onToggleButton">Toggle</Button>
 
     <DirectionsList v-if="step === 0" :active-item="from" @change="from = $event" />
+    <DirectionsList v-if="step === 1" :active-item="to" @change="to = $event" />
   </div>
 </template>
