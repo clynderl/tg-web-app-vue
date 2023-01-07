@@ -2,6 +2,7 @@
   <div class="header">
     <Button @click="onClose">Закрыть</Button>
     <span class="username">{{username}}</span>
+    {{photoUrl}}
     <img :src="photoUrl" alt="" class="img">
   </div>
 </template>
