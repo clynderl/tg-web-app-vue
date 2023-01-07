@@ -20,6 +20,7 @@ defineProps({
   flex-direction: column;
   align-items: center;
   border: 1px solid transparent;
+  background: var(--tg-theme-bg-color);
   padding: 15px;
   width: 170px;
   cursor: pointer;
