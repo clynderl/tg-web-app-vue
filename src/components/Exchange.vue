@@ -53,6 +53,7 @@ tg.MainButton.onClick(() => {
     tg.BackButton.show();
   } else if (step.value === 2) {
     step.value = 3;
+    tg.MainButton.hide();
   }
 });
 
