@@ -21,12 +21,14 @@ watch(fromActive, (val) => {
   if (val) {
     onToggleButton();
     tg.isClosingConfirmationEnabled = true;
+    tg.HapticFeedback.selectionChanged();
   }
 });
 
 watch(toActive, (val) => {
   if (val) {
     onToggleButton();
+    tg.HapticFeedback.selectionChanged();
   }
 });
 
