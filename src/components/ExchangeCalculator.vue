@@ -1,5 +1,11 @@
 <template>
   <div>
+    <p class="hint">Отдаете</p>
+    <div class="input">
+      <div class="image-box">
+        <img :src="fromActive?.logo?.simple" alt="">
+      </div>
+    </div>
     <pre>
     {{ fromActive }}
     {{ toActive }}
@@ -28,5 +34,32 @@ pairData.value = await pairDataResponse.json();
 </script>
 
 <style scoped>
+.hint {
+  font-size: 14px;
+  color: var(--tg-theme-hint-color);
+}
 
+.input {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  width: 100%;
+  height: 51px;
+  background-color: gray;
+  border-radius: 10px;
+}
+
+.image-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 10px;
+  width: 48px;
+  height: 48px;
+}
+
+.image-box > img {
+  width: 32px;
+  height: 32px;
+}
 </style>
