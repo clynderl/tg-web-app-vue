@@ -4,8 +4,9 @@
     <div class="input-box">
       <div class="image-box">
         <img :src="fromActive?.logo?.simple" alt="">
-        <input type="number" class="input">
       </div>
+      <input type="number" class="input">
+
     </div>
     <pre>
     {{ fromActive }}
