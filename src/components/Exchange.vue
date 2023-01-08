@@ -20,6 +20,7 @@ const {tg, onToggleButton} = useTelegram();
 watch(fromActive, (val) => {
   if (val) {
     onToggleButton();
+    tg.isClosingConfirmationEnabled = true;
   }
 });
 
