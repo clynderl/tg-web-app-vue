@@ -5,6 +5,7 @@
         :key="item.title"
         :title="item.name"
         :img="item.logo.simple"
+        :active="item.name === 'Bitcoin'"
     />
   </div>
 </template>
