@@ -78,14 +78,16 @@ import Exchange from './components/Exchange.vue';
     <TheHeader />
     <!--    work-->
     <!--    <Button type="button" @click="onToggleButton">Toggle</Button>-->
-    <Suspense>
-      <template #default>
-        <Exchange />
-      </template>
-      <template #fallback>
-        <div>Parent: Загрузка...</div>
-      </template>
-    </Suspense>
+    <div class="container">
+      <Suspense>
+        <template #default>
+          <Exchange />
+        </template>
+        <template #fallback>
+          <div>Parent: Загрузка...</div>
+        </template>
+      </Suspense>
+    </div>
     <!--    <transition name="fade" mode="out-in">-->
     <!--      <DirectionsList v-if="step === 0" :active-item="from" @change="onFromSelect($event)" :step="step" />-->
     <!--    </transition>-->
@@ -104,5 +106,10 @@ import Exchange from './components/Exchange.vue';
 .fade-enter-from,
 .fade-leave-to {
   opacity: 0;
+}
+
+.container {
+  padding-left: 10px;
+  padding-right: 10px;
 }
 </style>

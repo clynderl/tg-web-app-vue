@@ -4,7 +4,7 @@
     line-height: 24px;
     font-weight: 400;
     font-synthesis: none;
-    background: var(--tg-theme-secondary-bg-color);
+    background: var(--tg-theme-bg-color);
     color: var(--tg-theme-text-color);
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
