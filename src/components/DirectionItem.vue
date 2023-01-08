@@ -1,6 +1,8 @@
 <template>
   <div class="direction" :class="active ? 'active' : ''">
-    <img :src="img" alt="" class="img">
+    <div class="img-container">
+      <img :src="img" alt="" class="img">
+    </div>
     <div class="title">{{ title }}</div>
   </div>
 </template>
@@ -41,9 +43,19 @@ defineProps({
   border-color: var(--tg-theme-button-color);
 }
 
-.img {
-  width: 100%;
+.img-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
   height: 100px;
+  border-radius: 50%;
+  background: var(--tg-theme-bg-color);
+}
+
+.img {
+  width: 64px;
+  height: 64px;
   margin: 0 auto;
   object-fit: contain;
 }
