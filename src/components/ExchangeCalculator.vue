@@ -1,9 +1,10 @@
 <template>
   <div>
     <p class="hint">Отдаете</p>
-    <div class="input">
+    <div class="input-box">
       <div class="image-box">
         <img :src="fromActive?.logo?.simple" alt="">
+        <input type="number" class="input">
       </div>
     </div>
     <pre>
@@ -39,7 +40,7 @@ pairData.value = await pairDataResponse.json();
   color: var(--tg-theme-hint-color);
 }
 
-.input {
+.input-box {
   position: relative;
   display: inline-flex;
   align-items: center;
@@ -61,5 +62,25 @@ pairData.value = await pairDataResponse.json();
 .image-box > img {
   width: 32px;
   height: 32px;
+}
+
+.input {
+  font: inherit;
+  color: currentColor;
+  width: 100%;
+  border: 0;
+  height: inherit;
+  margin: 0;
+  display: block;
+  padding: 6px 0 7px;
+  font-size: 14px;
+  min-width: 0;
+  background: none;
+  box-sizing: content-box;
+  font-weight: 600;
+  animation-name: mui-auto-fill-cancel;
+  letter-spacing: 0.01em;
+  animation-duration: 10ms;
+  -webkit-tap-highlight-color: transparent;
 }
 </style>
