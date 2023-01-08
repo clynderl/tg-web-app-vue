@@ -4,6 +4,7 @@ import FromDirections from './FromDirections.vue';
 import useTelegram from '../use/useTelegram.js';
 import ToDirections from './ToDirections.vue';
 import ExchangeCalculator from './ExchangeCalculator.vue';
+import ExchangeDetails from './ExchangeDetails.vue';
 
 const step = ref(0);
 
@@ -118,6 +119,14 @@ const title = computed(() => {
     <Suspense v-else-if="step === 2">
       <template #default>
         <ExchangeCalculator :from-active="fromActive" :to-active="toActive" />
+      </template>
+      <template #fallback>
+        <div>Loading...</div>
+      </template>
+    </Suspense>
+    <Suspense v-else-if="step === 3">
+      <template #default>
+        <ExchangeDetails :from-active="fromActive" :to-active="toActive" />
       </template>
       <template #fallback>
         <div>Loading...</div>
