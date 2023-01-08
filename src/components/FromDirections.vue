@@ -1,5 +1,4 @@
 <template>
-  <h1 class="title">1. Отдаете</h1>
   <DirectionsList :directions="items" @change="emit('change', $event)" :active-item="activeItem" />
 </template>
 
@@ -46,8 +45,5 @@ const emit = defineEmits(['change']);
 </script>
 
 <style scoped>
-.title {
-  margin-bottom: 20px;
-  color: var(--tg-theme-text-color);
-}
+
 </style>
