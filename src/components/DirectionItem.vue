@@ -36,7 +36,6 @@ defineProps({
   cursor: pointer;
   border-radius: 20px;
   transition: border-color .2s ease;
-  user-select: none;
 }
 
 .direction.active {
@@ -59,6 +58,7 @@ defineProps({
   height: 64px;
   margin: 0 auto;
   object-fit: contain;
+  user-select: none;
 }
 
 .title {
@@ -66,6 +66,7 @@ defineProps({
   font-size: .9em;
   color: var(--tg-theme-text-color);
   cursor: pointer;
+  user-select: none;
 }
 
 .add-btn {
