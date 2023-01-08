@@ -10,6 +10,7 @@ const directionsResponse = await fetch('https://dev7d8d3h4.sova.gg/api/v1/calcul
 directions.value = await directionsResponse.json();
 
 const fromActive = ref(null);
+const toActive = ref(null);
 
 const {tg, onToggleButton} = useTelegram();
 
@@ -18,6 +19,13 @@ watch(fromActive, (val) => {
     onToggleButton();
   }
 });
+
+watch(toActive, (val) => {
+  if (val) {
+    onToggleButton();
+  }
+});
+
 
 tg.MainButton.onClick(() => {
   if (step.value === 0) {
@@ -63,6 +71,14 @@ const title = computed(() => {
     <Suspense v-if="step === 0">
       <template #default>
         <FromDirections :directions="directions" :active-item="fromActive" @change="fromActive = $event" />
+      </template>
+      <template #fallback>
+        <div>Loading...</div>
+      </template>
+    </Suspense>
+    <Suspense v-else-if="step === 1">
+      <template #default>
+        <FromDirections :directions="directions" :active-item="toActive" @change="toActive = $event" />
       </template>
       <template #fallback>
         <div>Loading...</div>
