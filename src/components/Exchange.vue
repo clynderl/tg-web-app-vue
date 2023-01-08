@@ -2,6 +2,7 @@
 import {computed, ref, watch} from 'vue';
 import FromDirections from './FromDirections.vue';
 import useTelegram from '../use/useTelegram.js';
+import ToDirections from './ToDirections.vue';
 
 const step = ref(0);
 
@@ -54,15 +55,15 @@ tg.MainButton.onClick(() => {
 
 const title = computed(() => {
   if (step.value === 0) {
-    return '1. Отдаете'
+    return '1. Отдаете';
   }
   if (step.value === 1) {
-    return '2. Получаете'
+    return '2. Получаете';
   }
   if (step.value === 2) {
-    return '3. Калькулятор обмена'
+    return '3. Калькулятор обмена';
   }
-})
+});
 </script>
 
 <template>
@@ -70,7 +71,11 @@ const title = computed(() => {
     <h1 class="title">{{ title }}</h1>
     <Suspense v-if="step === 0">
       <template #default>
-        <FromDirections :directions="directions" :active-item="fromActive" @change="fromActive = $event" />
+        <FromDirections
+            :directions="directions"
+            :active-item="fromActive"
+            @change="fromActive = $event"
+        />
       </template>
       <template #fallback>
         <div>Loading...</div>
@@ -78,7 +83,12 @@ const title = computed(() => {
     </Suspense>
     <Suspense v-else-if="step === 1">
       <template #default>
-        <FromDirections :directions="directions" :active-item="toActive" @change="toActive = $event" />
+        <ToDirections
+            :fromDirection="fromActive"
+            :directions="directions"
+            :active-item="toActive"
+            @change="toActive = $event"
+        />
       </template>
       <template #fallback>
         <div>Loading...</div>
