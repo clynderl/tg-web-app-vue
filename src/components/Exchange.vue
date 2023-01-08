@@ -56,6 +56,20 @@ tg.MainButton.onClick(() => {
   }
 });
 
+tg.BackButton.onClick(() => {
+  if (step.value === 1) {
+    step.value = 0;
+    tg.MainButton.show();
+    tg.BackButton.hide();
+  } else if (step.value === 2) {
+    step.value = 1;
+    tg.MainButton.show();
+    tg.BackButton.hide();
+  } else if (step.value === 3) {
+    step.value = 2;
+  }
+});
+
 const title = computed(() => {
   if (step.value === 0) {
     return '1. Отдаете';

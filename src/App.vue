@@ -31,17 +31,7 @@ onMounted(() => {
 //
 
 //
-// tg.BackButton.onClick(() => {
-//   if (step.value === 1) {
-//     step.value = 0;
-//     tg.MainButton.show();
-//     tg.BackButton.hide();
-//   } else if (step.value === 2) {
-//     step.value = 1;
-//   } else if (step.value === 3) {
-//     step.value = 2;
-//   }
-// });
+
 //
 // const onFromSelect = (val) => {
 //   from.value = val;
