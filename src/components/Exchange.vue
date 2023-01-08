@@ -1,5 +1,5 @@
 <script setup async>
-import {ref, watch} from 'vue';
+import {computed, ref, watch} from 'vue';
 import FromDirections from './FromDirections.vue';
 import useTelegram from '../use/useTelegram.js';
 
@@ -43,11 +43,23 @@ tg.MainButton.onClick(() => {
     step.value = 3;
   }
 });
+
+const title = computed(() => {
+  if (step.value === 0) {
+    return '1. Отдаете'
+  }
+  if (step.value === 1) {
+    return '2. Получаете'
+  }
+  if (step.value === 2) {
+    return '3. Калькулятор обмена'
+  }
+})
 </script>
 
 <template>
   <div class="exchange">
-    <h1 class="title">1. Отдаете</h1>
+    <h1 class="title">{{ title }}</h1>
     <Suspense v-if="step === 0">
       <template #default>
         <FromDirections :directions="directions" :active-item="fromActive" @change="fromActive = $event" />
