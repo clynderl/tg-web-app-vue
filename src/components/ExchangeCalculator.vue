@@ -1,12 +1,16 @@
 <template>
   <div>
+    <pre>
     {{ fromActive }}
     {{ toActive }}
-    {{ pairData}}
+    {{ pairData }}
+    </pre>
   </div>
 </template>
 
 <script setup async>
+import {ref} from 'vue';
+
 const props = defineProps({
   fromActive: {
     type: Object,

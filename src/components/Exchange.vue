@@ -71,7 +71,7 @@ const title = computed(() => {
 
 <template>
   <div class="exchange">
-    <h1 class="title">{{ title }}</h1>
+    <h1 class="title" @click="step++">{{ title }}</h1>
     <Suspense v-if="step === 0">
       <template #default>
         <FromDirections
