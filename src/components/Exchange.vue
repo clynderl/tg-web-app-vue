@@ -49,7 +49,7 @@ tg.MainButton.onClick(() => {
     //   step.value = 1;
     //   tg.MainButton.show();
     // });
-    tg.MainButton.hide();
+    tg.MainButton.show();
     tg.BackButton.show();
   } else if (step.value === 2) {
     step.value = 3;
@@ -79,6 +79,9 @@ const title = computed(() => {
   }
   if (step.value === 2) {
     return '3. Калькулятор обмена';
+  }
+  if (step.value === 3) {
+    return '4. Ваши реквизиты';
   }
 });
 </script>
