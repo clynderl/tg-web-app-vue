@@ -3,6 +3,7 @@ import {computed, ref, watch} from 'vue';
 import FromDirections from './FromDirections.vue';
 import useTelegram from '../use/useTelegram.js';
 import ToDirections from './ToDirections.vue';
+import ExchangeCalculator from './ExchangeCalculator.vue';
 
 const step = ref(0);
 
@@ -91,6 +92,14 @@ const title = computed(() => {
             :active-item="toActive"
             @change="toActive = $event"
         />
+      </template>
+      <template #fallback>
+        <div>Loading...</div>
+      </template>
+    </Suspense>
+    <Suspense v-else-if="step === 2">
+      <template #default>
+        <ExchangeCalculator />
       </template>
       <template #fallback>
         <div>Loading...</div>
