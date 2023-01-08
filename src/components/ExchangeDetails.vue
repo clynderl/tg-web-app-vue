@@ -2,8 +2,8 @@
   <div>
     <div class="from">
       <div class="input-container" v-for="input in fromInputs">
-        <p class="hint" v-if="input.send.header">{{ input.send.header }}</p>
-        <div class="input-box" v-if="input.send.header">
+        <p class="hint" v-if="input.send.placeholder !== '-'">{{ input.send.placeholder }}</p>
+        <div class="input-box" v-if="input.send.placeholder !== '-'">
           <div class="image-box">
             <img :src="fromActive?.logo?.simple" alt="">
           </div>
@@ -14,8 +14,8 @@
     </div>
     <div class="from">
       <div class="input-container" v-for="input in toInputs">
-        <p class="hint" v-if="input.receive.header">{{ input.receive.header }}</p>
-        <div class="input-box" v-if="input.receive.header">
+        <p class="hint" v-if="input.receive.placeholder !== '-'">{{ input.receive.placeholder }}</p>
+        <div class="input-box" v-if="input.receive.placeholder !== '-'">
           <div class="image-box">
             <img :src="toActive?.logo?.simple" alt="">
           </div>
