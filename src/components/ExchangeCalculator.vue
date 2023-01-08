@@ -45,8 +45,8 @@ pairData.value = await pairDataResponse.json();
   align-items: center;
   width: 100%;
   height: 51px;
-  background-color: gray;
   border-radius: 10px;
+  background: var(--tg-theme-secondary-bg-color);
 }
 
 .image-box {
