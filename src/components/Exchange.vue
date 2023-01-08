@@ -3,17 +3,44 @@ import {ref, watch} from 'vue';
 import FromDirections from './FromDirections.vue';
 import useTelegram from '../use/useTelegram.js';
 
+const step = ref(0);
+
 const directions = ref(null);
 const directionsResponse = await fetch('https://dev7d8d3h4.sova.gg/api/v1/calculator/');
 directions.value = await directionsResponse.json();
 
 const fromActive = ref(null);
 
-const {onToggleButton} = useTelegram();
+const {tg, onToggleButton} = useTelegram();
 
 watch(fromActive, (val) => {
   if (val) {
     onToggleButton();
+  }
+});
+
+tg.MainButton.onClick(() => {
+  if (step.value === 0) {
+    step.value = 1;
+    tg.MainButton.hide();
+    tg.BackButton.show();
+  } else if (step.value === 1) {
+    step.value = 2;
+    tg.MainButton.hide();
+    tg.showConfirm('Вы уверены, что хотите обменять?', () => {
+      tg.showAlert('Обмен успешно завершен', () => {
+        step.value = 0;
+        from.value = null;
+        to.value = null;
+        tg.MainButton.hide();
+        tg.BackButton.hide();
+      });
+    }, () => {
+      step.value = 1;
+      tg.MainButton.show();
+    });
+  } else if (step.value === 2) {
+    step.value = 3;
   }
 });
 </script>
@@ -21,7 +48,7 @@ watch(fromActive, (val) => {
 <template>
   <div class="exchange">
     <h1 class="title">1. Отдаете</h1>
-    <Suspense>
+    <Suspense v-if="step === 0">
       <template #default>
         <FromDirections :directions="directions" :active-item="fromActive" @change="fromActive = $event" />
       </template>

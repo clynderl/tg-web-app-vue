@@ -6,15 +6,15 @@ import TheHeader from './components/TheHeader.vue';
 import DirectionsList from './components/DirectionsList.vue';
 import Exchange from './components/Exchange.vue';
 
-// const {tg, onToggleButton} = useTelegram();
+const {tg} = useTelegram();
 
 // const step = ref(0);
 // const from = ref(null);
 // const to = ref(null);
 //
-// onMounted(() => {
-//   tg.ready();
-// });
+onMounted(() => {
+  tg.ready();
+});
 //
 //
 // watch(from, (val) => {
@@ -29,30 +29,7 @@ import Exchange from './components/Exchange.vue';
 //   }
 // });
 //
-// tg.MainButton.onClick(() => {
-//   if (step.value === 0) {
-//     step.value = 1;
-//     tg.MainButton.hide();
-//     tg.BackButton.show();
-//   } else if (step.value === 1) {
-//     step.value = 2;
-//     tg.MainButton.hide();
-//     tg.showConfirm('Вы уверены, что хотите обменять?', () => {
-//       tg.showAlert('Обмен успешно завершен', () => {
-//         step.value = 0;
-//         from.value = null;
-//         to.value = null;
-//         tg.MainButton.hide();
-//         tg.BackButton.hide();
-//       });
-//     }, () => {
-//       step.value = 1;
-//       tg.MainButton.show();
-//     });
-//   } else if (step.value === 2) {
-//     step.value = 3;
-//   }
-// });
+
 //
 // tg.BackButton.onClick(() => {
 //   if (step.value === 1) {
