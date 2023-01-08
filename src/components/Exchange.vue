@@ -35,19 +35,21 @@ tg.MainButton.onClick(() => {
     tg.BackButton.show();
   } else if (step.value === 1) {
     step.value = 2;
+    // tg.MainButton.hide();
+    // tg.showConfirm('Вы уверены, что хотите обменять?', () => {
+    //   tg.showAlert('Обмен успешно завершен', () => {
+    //     step.value = 0;
+    //     from.value = null;
+    //     to.value = null;
+    //     tg.MainButton.hide();
+    //     tg.BackButton.hide();
+    //   });
+    // }, () => {
+    //   step.value = 1;
+    //   tg.MainButton.show();
+    // });
     tg.MainButton.hide();
-    tg.showConfirm('Вы уверены, что хотите обменять?', () => {
-      tg.showAlert('Обмен успешно завершен', () => {
-        step.value = 0;
-        from.value = null;
-        to.value = null;
-        tg.MainButton.hide();
-        tg.BackButton.hide();
-      });
-    }, () => {
-      step.value = 1;
-      tg.MainButton.show();
-    });
+    tg.BackButton.show();
   } else if (step.value === 2) {
     step.value = 3;
   }
