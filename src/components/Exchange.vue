@@ -1,12 +1,21 @@
 <script setup async>
-import {ref} from 'vue';
+import {ref, watch} from 'vue';
 import FromDirections from './FromDirections.vue';
+import useTelegram from '../use/useTelegram.js';
 
 const directions = ref(null);
 const directionsResponse = await fetch('https://dev7d8d3h4.sova.gg/api/v1/calculator/');
 directions.value = await directionsResponse.json();
 
 const fromActive = ref(null);
+
+const {onToggleButton} = useTelegram();
+
+watch(fromActive, (val) => {
+  if (val) {
+    onToggleButton();
+  }
+});
 </script>
 
 <template>
