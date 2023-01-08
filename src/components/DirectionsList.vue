@@ -5,8 +5,9 @@
         :key="item.title"
         :title="item.name"
         :img="item.logo.simple"
-        :active="item.name === 'Bitcoin'"
+        :active="activeItem?.name === item.name"
         class="item"
+        @click="emit('change', item)"
     />
   </div>
 </template>
@@ -16,8 +17,8 @@ import DirectionItem from './DirectionItem.vue';
 
 defineProps({
   activeItem: {
-    type: Number,
-    default: 0,
+    type: Object,
+    default: () => ({}),
   },
 
   directions: {

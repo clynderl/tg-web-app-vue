@@ -5,13 +5,15 @@ import FromDirections from './FromDirections.vue';
 const directions = ref(null);
 const directionsResponse = await fetch('https://dev7d8d3h4.sova.gg/api/v1/calculator/');
 directions.value = await directionsResponse.json();
+
+const fromActive = ref(null);
 </script>
 
 <template>
   <div class="exchange">
     <Suspense>
       <template #default>
-        <FromDirections :directions="directions" />
+        <FromDirections :directions="directions" :active-item="fromActive" @change="fromActive = $event" />
       </template>
       <template #fallback>
         <div>Loading...</div>

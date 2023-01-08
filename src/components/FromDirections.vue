@@ -1,5 +1,5 @@
 <template>
-  <DirectionsList :directions="items" />
+  <DirectionsList :directions="items" @change="emit('change', $event)" :active-item="activeItem" />
 </template>
 
 <script setup async>
@@ -8,8 +8,8 @@ import {computed, ref} from 'vue';
 
 const props = defineProps({
   activeItem: {
-    type: Number,
-    default: 0,
+    type: Object,
+    default: () => ({}),
   },
   directions: {
     type: Array,
@@ -30,6 +30,7 @@ const items = computed(() => {
   });
   return result;
 });
+const emit = defineEmits(['change']);
 // directions() {
 //   const result = [];
 //   this.paySystems.forEach(item => {
