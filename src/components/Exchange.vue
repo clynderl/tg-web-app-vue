@@ -99,7 +99,7 @@ const title = computed(() => {
     </Suspense>
     <Suspense v-else-if="step === 2">
       <template #default>
-        <ExchangeCalculator />
+        <ExchangeCalculator :from-active="fromActive" :to-active="toActive" />
       </template>
       <template #fallback>
         <div>Loading...</div>
