@@ -28,7 +28,7 @@ defineProps({
   flex-direction: column;
   align-items: center;
   border: 1px solid transparent;
-  box-shadow: 3px 4px 5px 0px rgba(0, 0, 0, 0.45);
+  /*box-shadow: 3px 4px 5px 0px rgba(0, 0, 0, 0.45);*/
   padding: 15px;
   width: 170px;
   cursor: pointer;
