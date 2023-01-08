@@ -1,7 +1,7 @@
 <template>
   <div class="direction" :class="active ? 'active' : ''">
-    <img :src="step === 1 ? '/bitcoin.svg' : '/ethereum.svg'" alt="" class="img">
-    <div class="title">{{ step === 1 ? 'Bitcoin' : 'Ethereum' }}</div>
+    <img :src="img" alt="" class="img">
+    <div class="title">{{ title }}</div>
   </div>
 </template>
 
@@ -11,8 +11,12 @@ defineProps({
     type: Boolean,
     default: false,
   },
-  step: {
-    type: Number,
+  img: {
+    type: String,
+    required: true,
+  },
+  title: {
+    type: String,
     required: true,
   },
 });
@@ -40,6 +44,7 @@ defineProps({
   width: 100%;
   height: 100px;
   margin: 0 auto;
+  object-fit: contain;
 }
 
 .title {
