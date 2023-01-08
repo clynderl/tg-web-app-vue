@@ -1,8 +1,8 @@
 <template>
   <div class="header">
-    <Button @click="onClose">Закрыть</Button>
-    <span class="username">{{username}}</span>
-    {{photoUrl}}
+    <!--    <Button @click="onClose">Закрыть</Button>-->
+    <span class="username">{{ username }}</span>
+    {{ photoUrl }}
     <img :src="photoUrl" alt="" class="img">
   </div>
 </template>
@@ -30,6 +30,7 @@ const photoUrl = computed(() => {
   display: flex;
   align-items: center;
   padding: 0 20px;
+  background-color: orange;
 }
 
 .username {
