@@ -22,7 +22,7 @@ directions.value = await directionsResponse.json();
 
 <style scoped>
 .exchange {
-  background: var(--tg-theme-text-color);
+  background: var(--tg-theme-secondary-bg-color);
   border-radius: 10px;
 }
 </style>
