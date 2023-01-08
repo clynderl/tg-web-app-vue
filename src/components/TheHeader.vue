@@ -35,6 +35,7 @@ const photoUrl = computed(() => {
 
 .username {
   margin-left: auto;
+  user-select: none;
 }
 
 .img {

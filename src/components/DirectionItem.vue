@@ -36,6 +36,7 @@ defineProps({
   cursor: pointer;
   border-radius: 20px;
   transition: border-color .2s ease;
+  user-select: none;
 }
 
 .direction.active {
