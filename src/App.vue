@@ -109,6 +109,7 @@ import Exchange from './components/Exchange.vue';
 }
 
 .container {
+  padding-top: 10px;
   padding-left: 10px;
   padding-right: 10px;
 }

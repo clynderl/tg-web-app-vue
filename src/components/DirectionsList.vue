@@ -35,6 +35,12 @@ const emit = defineEmits(['change']);
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  margin-top: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background: var(--tg-theme-secondary-bg-color);
+  /*background: #000;*/
+  border-radius: 10px;
 }
 
 .item {

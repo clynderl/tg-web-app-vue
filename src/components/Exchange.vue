@@ -25,11 +25,7 @@ const fromActive = ref(null);
 
 <style scoped>
 .exchange {
-  margin-top: 10px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  background: var(--tg-theme-secondary-bg-color);
-  border-radius: 10px;
+
 }
 
 .title {
