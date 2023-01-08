@@ -14,6 +14,7 @@ const {tg} = useTelegram();
 //
 onMounted(() => {
   tg.ready();
+  tg.isClosingConfirmationEnabled = true;
 });
 //
 //

@@ -38,6 +38,11 @@ tg.MainButton.onClick(() => {
   } else if (step.value === 1) {
     step.value = 2;
     // tg.MainButton.hide();
+    tg.MainButton.show();
+    tg.BackButton.show();
+  } else if (step.value === 2) {
+    step.value = 3;
+    tg.MainButton.hide();
     // tg.showConfirm('Вы уверены, что хотите обменять?', () => {
     //   tg.showAlert('Обмен успешно завершен', () => {
     //     step.value = 0;
@@ -50,11 +55,6 @@ tg.MainButton.onClick(() => {
     //   step.value = 1;
     //   tg.MainButton.show();
     // });
-    tg.MainButton.show();
-    tg.BackButton.show();
-  } else if (step.value === 2) {
-    step.value = 3;
-    tg.MainButton.hide();
   }
 });
 
