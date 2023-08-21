@@ -22,7 +22,7 @@ const props = defineProps({
 });
 
 const directionsIds = ref(null);
-const directionsIdsResponse = await fetch(`https://dev7d8d3h4.sova.gg/api/v1/calculator/from/${props.fromDirection.ids[0]}/`);
+const directionsIdsResponse = await fetch(`https://dev7d8d3h4.alt-coin.cc/api/v1/calculator/from/${props.fromDirection.ids[0]}/`);
 directionsIds.value = await directionsIdsResponse.json();
 
 const items = computed(() => {

@@ -9,7 +9,7 @@ import ExchangeDetails from './ExchangeDetails.vue';
 const step = ref(0);
 
 const directions = ref(null);
-const directionsResponse = await fetch('https://dev7d8d3h4.sova.gg/api/v1/calculator/');
+const directionsResponse = await fetch('https://dev7d8d3h4.alt-coin.cc/api/v1/calculator/');
 directions.value = await directionsResponse.json();
 
 const fromActive = ref(null);
